@@ -5,7 +5,7 @@ import argparse
 from subprocess import check_output
 
 
-parser = argparse.ArgumentParser(description="Process inout and output file names")
+parser = argparse.ArgumentParser(description="Process input and output file names")
 parser.add_argument("-f", "--files", help="list of input files", required=True, nargs='+')
 parser.add_argument("-o", "--output", help="output file", required=True, type=argparse.FileType('w'))
 args = parser.parse_args()
