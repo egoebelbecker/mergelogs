@@ -1,35 +1,23 @@
+#!/usr/bin/python
 import os
 import re
-import sys
-
-from optparse import OptionParser
-
+import argparse
 from subprocess import check_output
 
-# Regex used to match relevant loglines (in this case, a specific IP address)
+
+parser = argparse.ArgumentParser(description="Process inout and output file names")
+parser.add_argument("-f", "--files", help="list of input files", required=True, nargs='+')
+parser.add_argument("-o", "--output", help="output file", required=True, type=argparse.FileType('w'))
+args = parser.parse_args()
 
 #
-# This code works with a timestamp that looks like this:
-# 2018-09-06 15:20:40,980
-#
-#
-
-parser = OptionParser()
-parser.add_option("-f", "--files")
-parser.add_option("-o", "--output")
-
-(options, args) = parser.parse_args()
-
-files = options.files.split(',')
-
-#
-# This expression work with log files that tart with a date
+# This expression work with log files that start with a date
 # I.E. 2018-09-06
 #
 line_regex = re.compile("^[^0-90-90-90-9\-0-90-9\-0-90-9]")
 
 with open("tmp.log", "w") as out_file:
-    for filename in files:
+    for filename in args.files:
         print "Processing " + filename
         lastline = ""
         with open(filename, "r") as in_file:
@@ -44,21 +32,12 @@ with open("tmp.log", "w") as out_file:
                     out_file.write(lastline)
                     lastline = line
 
-
-
-sorted = check_output(["/usr/bin/sort", "--key=1,2", "tmp.log"])
-
+sorted_log = check_output(["/usr/bin/sort", "--key=1,2", "tmp.log"])
 
 os.remove("tmp.log")
 
-lines = sorted.split('\n')
-with open(options.output, "w") as out_file:
-    for line in lines:
-        print "\nBefore " + line
-        newline = line.replace('\1', '\n')
-        print "After " + newline + "\n"
-        out_file.write(newline + "\n")
+lines = sorted_log.split('\n')
+for line in lines:
+    newline = line.replace('\1', '\n')
+    args.output.write(newline + "\n")
 
-
-
-sys.exit(0)

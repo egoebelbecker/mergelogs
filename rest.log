@@ -1,0 +1,5 @@
+2018-09-06 15:20:43:031 [INFO] com.foobar.atr.rest.controller.SessionStatusCache addSessionStatus():28 [lettuce-nioEventLoop-10-5] Adding session: TEST02 at 1536243961031
+2018-09-06 15:20:46:031 [INFO] com.foobar.atr.rest.controller.SessionStatusCache addSessionStatus():28 [lettuce-nioEventLoop-13-4] Adding session: TEST02 at 1536243961031
+2018-09-06 15:23:15:032 [INFO] com.foobar.atr.rest.controller.SessionStatusCache addSessionStatus():28 [lettuce-nioEventLoop-7-5] Adding session: TEST02 at 1536243961032
+2018-09-06 15:24:35:257 [INFO] com.foobar.atr.rest.controller.StatusController getSessionStatus():67 [http-nio-8010-exec-4] Received request a fix session, senderCompId:RBSG2
+2018-09-06 15:27:30:691 [INFO] com.foobar.atr.rest.controller.SessionStatusCache addSessionStatus():28 [lettuce-nioEventLoop-10-5] Adding session: PLOP02 at 1536244050691

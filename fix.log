@@ -1,0 +1,36 @@
+2018-09-06 15:20:40,980 [INFO] Heimdall main:26 [main] 
+
+Fix Engine is starting.
+
+
+2018-09-06 15:20:45,639 [ERROR] AcceptorFactory createSessionSettings:92 [main] 
+
+Session settings: [default]
+SocketAcceptPort=7000
+ConnectionType=acceptor
+ValidateUserDefinedFields=N
+ValidateLengthAndChecksum=N
+ValidateFieldsOutOfOrder=N
+
+
+2018-09-06 15:20:50,645 [ERROR] AcceptorFactory getSessionSettings:123 [main]
+
+Second Session settings: [default]
+SocketAcceptPort=7000
+ConnectionType=acceptor
+ValidateUserDefinedFields=N
+ValidateLengthAndChecksum=N
+ValidateFieldsOutOfOrder=N
+
+
+2018-09-06 15:21:45,653 [INFO] ThreadedSocketAcceptor startSessionTimer:291 [main] SessionTimer started
+2018-09-06 15:21:47,711 [INFO] NetworkingOptions logOption:119 [main] Socket option: SocketTcpNoDelay=true
+2018-09-06 15:21:59,919 [INFO] SendMessageToSolace addSession:51 [QF/J Session dispatcher: FIX.4.2:FOOU->TEST02] Adding session: FIX.4.2:FOOU->TEST02
+2018-09-06 15:22:59,920 [INFO] MessageClient openTopic:422 [QF/J Session dispatcher: FIX.4.2:FOOU->TEST02]
+
+Opening FOO/DEV/AMER/FixEngine/Admin/*/TEST02
+2018-09-06 15:23:59,937 [ERROR] ConsumerNodeStatusHandler setStateUp:186 [QF/J Session dispatcher: FIX.4.2:FOOU->TEST02] Setting State up: TEST02
+2018-09-06 15:24:03,962 [INFO] MessageClient openTopic:422 [stateHeartbeat]
+
+Opening FOO/DEV/AMER/State/Admin/Events
+2018-09-06 15:25:00,536 [INFO] incoming messageReceived:146 [NioProcessor-2] FIX.4.2:FOOU->TEST02: 8=FIX.4.29=6235=149=TEST0256=FOOU34=252=20180906-15:21:00.528112=TEST10=198
